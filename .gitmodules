@@ -1,3 +1,3 @@
 [submodule "ckan-lodcloud-reporting/Ckan_client-PHP"]
 	path = ckan-lodcloud-reporting/Ckan_client-PHP
-	url = git@github.com:cygri/Ckan_client-PHP.git
+	url = git://github.com/cygri/Ckan_client-PHP.git
