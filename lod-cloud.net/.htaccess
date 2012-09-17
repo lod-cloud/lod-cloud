@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect homepage to diagram page until we have a dedicated homepage
+RewriteRule ^$ http://lod-cloud.net/diagram/ [R=302,L]
+
+# To make the URIs in the voiD dump dereferenceable, redirect everything
+# else that is not in /data to the dump with 303
+RewriteCond $0 !^(data|diagram|state)(/.*)?$
+RewriteRule .+ http://dsi.lod-cloud.net/$0 [R=303,L]
+#RewriteRule .+ http://lod-cloud.net/data/void.ttl [R=303,L]
+
+# Configure correct media type for Turtle files
+AddType text/turtle .n3 .ttl
+
+@@@ TODO Make http://lod-cloud.net/lod-datasets an alias for latest.php
