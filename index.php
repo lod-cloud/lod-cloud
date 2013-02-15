@@ -27,9 +27,9 @@
     <p style="clear:right"><span about="#cloud" property="dc:description" datatype="">This web page is the home of the <em>LOD cloud diagram</em>. This image shows datasets that
       have been published in <a href="http://linkeddata.org/">Linked Data</a> format, by contributors to the
       <a href="http://esw.w3.org/topic/SweoIG/TaskForces/CommunityProjects/LinkingOpenData">Linking Open Data</a>
-      community project and other individuals and organisations. It is based on metadata collected and curated by contributors to the <a href="http://ckan.net/">CKAN directory</a>.</span> Clicking the image will take you to an image map, where each dataset is a hyperlink to its homepage.</p>
+      community project and other individuals and organisations. It is based on metadata collected and curated by contributors to the <a href="http://datahub.io/">Data Hub</a>.</span> Clicking the image will take you to an image map, where each dataset is a hyperlink to its homepage.</p>
 
-    <p>The diagram is maintained by <span rel="dc:creator"><a typeof="foaf:Person" href="http://richard.cyganiak.de/#me" property="foaf:name">Richard Cyganiak</a></span> (<a href="http://www.deri.ie/">DERI, NUI Galway</a>) and <span rel="dc:contributor"><a typeof="foaf:Person" href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/team/JentzschAnja.html" resource="#anja" property="foaf:name">Anja Jentzsch</a></span> (<a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/">Freie Universität Berlin</a>). For any questions and comments, please
+    <p>The diagram is maintained by <span rel="dc:creator"><a typeof="foaf:Person" href="http://richard.cyganiak.de/#me" property="foaf:name">Richard Cyganiak</a></span> (<a href="http://www.deri.ie/">DERI, NUI Galway</a>) and <span rel="dc:contributor"><a typeof="foaf:Person" href="http://anjajentzsch.de/" resource="#anja" property="foaf:name">Anja Jentzsch</a></span> (<a href="http://www.hpi.uni-potsdam.de/">HPI</a>). For any questions and comments, please
       email <a href="mailto:richard@cyganiak.de">richard@cyganiak.de</a> and <a href="mailto:mail@anjajentzsch.de">mail@anjajentzsch.de</a>.</p>
 
 <?php
@@ -71,6 +71,11 @@ $d = $latest;
     <p>Last updated: <span property="dc:modified" datatype="xsd:date"><?php echo $d; ?></span></p>
 
     <p><a href="versions/<?php echo $d; ?>/lod-cloud.html"><img src="versions/<?php echo $d; ?>/lod-cloud_1000px.png" alt="Linking Open Data cloud diagram, large version" title="Click to zoom" /></a></p>
+
+
+    <h2 id="state">State of the LOD Cloud <small><a href="#state">#</a></small></h2>
+
+    <p>We maintain a separate page with statistics about these datasets: <strong><a href="state">State of the LOD Cloud</a></strong></p>
 
 
     <h2 id="license">Can I use this diagram in my slides, paper, book? <small><a href="#license">#</a></small></h2>
@@ -118,24 +123,24 @@ $d = $latest;
     </ul>
 
     <div style="float:right">
-      <a href="http://ckan.net/"><img src="resources/logo-ckan.png" alt="CKAN" /></a>
+      <a href="http://datahub.io/"><img src="resources/logo-ckan.png" width="100" height="100" alt="CKAN" /></a>
     </div>
 
     <p>If your dataset meets these criteria:</p>
  
     <ol>
-      <li>Please add it to <a href="http://ckan.net/">CKAN</a>, the open registry of data and content packages.
-        See the <a href="http://esw.w3.org/TaskForces/CommunityProjects/LinkingOpenData/DataSets/CKANmetainformation">Guidelines for Collecting Metadata onLinked Datasets in CKAN</a> for more details. (Before creating a new CKAN package, please double-check whether a package already exists for your dataset.)</li>
-      <li>We provide a <a href="http://www4.wiwiss.fu-berlin.de/lodcloud/ckan/validator/">handy CKAN record validator</a>; use it to check that at least the minimum required information is present.</li>
+      <li>Please add it to the <a href="http://datahub.io/">Data Hub</a>, the open registry of data and content packages.
+        See the <a href="http://esw.w3.org/TaskForces/CommunityProjects/LinkingOpenData/DataSets/CKANmetainformation">Guidelines for Collecting Metadata on Linked Datasets in the Data Hub</a> for more details. (Before creating a new Data Hub record, please double-check whether a record already exists for your dataset.)</li>
+      <li>We provide a <a href="http:///validator.lodcloud.net/">handy record validator</a>; use it to check that at least the minimum required information is present.</li>
       <li>Email <a href="mailto:richard@cyganiak.de">richard@cyganiak.de</a> and <a href="mailto:mail@anjajentzsch.de">mail@anjajentzsch.de</a>.</li>
-      <li>We will review the CKAN record, add it to the CKAN <a href="http://ckan.net/group/lodcloud">lodcloud group</a>.</li>
+      <li>We will review the Data Hub record, and add it to the <a href="http://datahub.io/group/lodcloud">lodcloud group</a>.</li>
       <li>The dataset will be included in the next update of the diagram.</p>
     </ol>
 
 
     <h2 id="excluded">Why is my dataset not included? <small><a href="#excluded">#</a></small></h2>
 
-    <p>See the question above—please make sure that it meets the criteria, is in CKAN, and that we know about it. Other possible reasons why we exclude some datasets are:</p>
+    <p>See the question above—please make sure that it meets the criteria, is in the Data Hub, and that we know about it. Other possible reasons why we exclude some datasets are:</p>
     <ul>
       <li>The dataset is published through a <em>SPARQL endpoint</em>, without resolvable entity URIs.</li>
       <li>The dataset is published as an <em>RDF dump</em>, without resolvable entity URIs.</li>
@@ -185,24 +190,24 @@ $d = $latest;
 
     <h2 id="raw-data">Can I get the raw data? <small><a href="#raw-data">#</a></small></h2>
 
-    <p>Yes. The diagram is based on metadata from the <a href="http://ckan.net/group/lodcloud">lodcloud group</a> on <a href="http://ckan.net/">CKAN</a>.
-      This data is fully accessible through the <a href="http://knowledgeforge.net/ckan/doc/ckan/api.html">CKAN API</a>.</p>
+    <p>Yes. The diagram is based on metadata from the <a href="http://datahub.io/group/lodcloud">lodcloud group</a> on the <a href="http://datahub.io/">Data Hub</a>.
+      This data is fully accessible through the <a href="http://docs.ckan.org/en/latest/api.html">CKAN API</a>.</p>
 
     <p>There are some code modules (Python, PHP, Drupal, Perl etc.) that provide convenient wrappers around much of the CKAN API.
-      For full details of these, please consult: <a href="http://wiki.okfn.org/ckan/related">http://wiki.okfn.org/ckan/related</a>.</p>
+      For full details of these, please consult <a href="http://docs.ckan.org/en/latest/api.html">the API docs</a>.</p>
 
-    <p>In the future we plan to make the data available directly as RDF, using the <a href="http://vocab.deri.ie/void/guide">voiD vocabulary</a>.</p>
+    <p>In the future we plan to make the data available directly as RDF, using the <a href="http://www.w3.org/TR/void/">VoID vocabulary</a>.</p>
 
 
     <h2 id="workflow">How is the diagram generated? <small><a href="#workflow">#</a></small></h2>
 
-    <p>The diagram is based on metadata from the <a href="http://ckan.net/group/lodcloud">lodcloud group</a> on <a href="http://ckan.net/">CKAN</a>.</p>
+    <p>The diagram is based on metadata from the <a href="http://datahub.io/group/lodcloud">lodcloud group</a> on the <a href="http://datahub.io/">Data Hub</a>.</p>
 
-    <p>In order to generate the diagram, we access CKAN via the CKAN API to get JSON for each of the data sets in the lodcloud group.
+    <p>In order to generate the diagram, we access the Data Hub via the CKAN API to get JSON for each of the data sets in the lodcloud group.
       We then automatically generate a new OmniGraffle file which contains the last version of the LOD cloud and an unsorted bunch of all new datasets.</p>
 
     <p>Those are manually arranged by their cluster membership to form a beautiful and fluffy cloud. 
-      Data set names are either taken from the provided title in CKAN or if given the shortname.
+      Data set names are either taken from the provided title in the Data Hub or if given the shortname.
       If the shortname is still too long, we manually tweak it in OmniGraffle.</p>
 
     <p>PDF and PNG versions are exported from OmniGraffle. The SVG is generated
@@ -296,6 +301,15 @@ $d = $latest;
 
 
     <h2 id="related">Related resources <small><a href="#related">#</a></small></h2>
+
+    <p>Other projects provide deeper information on the datasets in the LOD Cloud diagram:</p>
+
+    <ul>
+      <li><a href="http://datahub.io/group/lodcloud">lodcloud group on datahub.io</a>: This is the database where we maintain descriptions of all datasets in the diagram.</li>
+      <li><a href="http://stats.lod2.eu/">LODStats</a>: Computes comprehensive statistics about publicly available RDF datasets, including many that in the LOD Cloud diagram.</li>
+      <li><a href="http://lov.okfn.org/">Linked Open Vocabularies</a>: Analyses the RDF vocabularies used in these datasets.</li>
+      <li><a href="http://labs.mondeca.com/sparqlEndpointsStatus/">Mondeca Labs: SPARQL Endpoint Status</a>: Keeps track of the uptime and health of SPARQL endpoints that provide access to these datasets</li>
+    </ul>
 
     <p>Here are some similar or related efforts that visualise the Web of Data on a high level.</p>
 
