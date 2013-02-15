@@ -1,7 +1,7 @@
 RewriteEngine On
 
 # Make sure that various old URLs still work
-Redirect 301 /diagram/ http://lod-cloud.net/
+Redirect 301 /diagram http://lod-cloud.net
 
 # Make sure that old URLs like lod-datasets_2011-09-19.png still work
 RewriteRule ^lod-datasets_(\d\d\d\d-\d\d-\d\d)(.*)$ http://lod-cloud.net/versions/$1/lod-cloud$2 [R=301,L]
