@@ -1,0 +1,64 @@
+* {
+  line-height: 1.3em;
+}
+img {
+  border: 0;
+}
+td {
+  border: 1px solid #3F3F3F;
+  padding: 3px;
+}
+th {
+  border: 1px solid #3F3F3F;
+  text-align: left;
+  background-color: #F3F3F3;
+  padding: 3px;
+}
+.versions td {
+  padding-left: 1em;
+}
+a:link {
+  color: #2448A6;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+h1, h2, h3 {
+  border-bottom: 2px solid #2F5BCF;
+  color: #363636;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+h1 {
+  font-size: 200%;
+  margin-bottom: 0;
+  padding-top: 0.25em;
+  padding-bottom: 0.1em;
+}
+h2 {
+  font-size: 120%;
+  margin-top: 2.2em;
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 110%;
+  margin-top: 2.2em;
+  padding-bottom: 0.3em;
+}
+body {
+  margin: 2em;
+}
+td.dataset-count {
+  text-align: right;
+}
+h2 small a:link, h2 small a:visited, h3 small a:link, h3 small a:visited  {
+  color: #ddd;
+  font-size: 90%;
+}
+table {
+  border: 1px solid #3F3F3F;
+  border-collapse: collapse;  
+}

@@ -1,0 +1,778 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:dc="http://purl.org/dc/terms/" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title property="dc:title">State of the LOD Cloud</title>
+    <link rel="stylesheet" type="text/css" href="images/style.css">
+    <link rel="foaf:primaryTopic" resource="#cloud">
+  </head><body>
+    <div style="float: right;">
+      <a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/"><img src="images/logo-fub.png" alt="Freie Universität Berlin" style="position: relative; top: 3px;"></a>
+      <a href="http://www.deri.ie/"><img src="images/logo-deri.png" alt="DERI"></a>
+    </div>
+
+    <h1>State of the LOD Cloud</h1>
+
+    <div style="float: right; padding-top: 3px;">
+      <a href="http://latc-project.eu/"><img src="images/logo-latc.png" alt="LATC Project"></a>
+    </div>
+    <div style="clear: right; float: right; padding-top: 3px;">
+      <dl>
+        <dt>
+          <dd><a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/team/BizerChristian.html">Chris Bizer</a> (<a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/">Freie Universit&auml;t Berlin</a>)</dd>
+          <dd><a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/team/JentzschAnja.html">Anja Jentzsch</a> (<a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/">Freie Universit&auml;t Berlin</a>)</dd>
+          <dd><a href="http://richard.cyganiak.de/#me">Richard Cyganiak</a> (<a href="http://www.deri.ie/">DERI, NUI Galway</a>)</dd>
+        </dt>
+      </dl>
+    </div>
+
+    <p>Version 0.2, 02/16/2011</p>
+    <p style="clear: right;">This document provides statistics about the structure and content of the <a href="http://lod-cloud.net">LOD cloud</a>. It also analyzes the extend to which LOD data sources implement nine best practices that are either recommended W3C or have emerged within the LOD community.</p>
+    <p>All statistics within this document are based on the <a href="http://www.ckan.net/group/lodcloud">LOD data set catalog</a> that is maintained on CKAN. If you spot any errors in the data describing the LOD data sets, it would be great if you would correct them directly on CKAN. For information on how to describe datasets on CKAN please refer to the <a href="http://esw.w3.org/TaskForces/CommunityProjects/LinkingOpenData/DataSets/CKANmetainformation">Guidelines for Collecting Metadata on Linked Datasets in CKAN</a>.</p>
+
+    <h2 id="toc">Table of Contents</h2>
+
+    <p>
+    <ol>
+      <li><a href="#structure">Structure of LOD Cloud</a>
+        <ol>
+          <li><a href="#diagram">LOD cloud diagram</a></li>
+          <li><a href="#domains">Linked Data by domain</a></li>
+          <li><a href="#producer">Dataset published by data producer or by third-party</a></li>
+        </ol>
+      </li>
+      <li><a href="#best-practices">Compliance with Best Practices for Data Provisioning</a>
+        <ol>
+          <li><a href="#dereferencable">Provide dereferencable URIs</a></li>
+          <li><a href="#links">Set RDF links pointing at other data sources</a></li>
+          <li><a href="#terms">Use terms from widely deployed vocabularies</a></li>
+          <li><a href="#dereferencable-vocab">Make proprietary vocabulary terms dereferencable</a></li>
+          <li><a href="#mappings">Map proprietary vocabulary terms to other vocabularies</a></li>
+          <li><a href="#provenance">Provide provenance metadata</a></li>
+          <li><a href="#license">Provide licensing metadata</a></li>
+          <li><a href="#data-set-level-metadata">Provide data-set-level metadata</a></li>
+          <li><a href="#access">Refer to additional access methods</a></li>
+        </ol>
+      </li>
+    </ol>
+    </p>
+
+    <h2 id="structure">1. Structure of LOD Cloud <small><a href="#structure">#</a></small></h2>
+
+    <p>This section gives an overview of the structure of the LOD cloud. </p>
+
+
+    <h3 id="diagram">1.1 LOD cloud diagram <small><a href="#diagram">#</a></small></h3>
+
+    <p>The following diagram visualizes the data sets in the LOD cloud as well as their interlinkage relationships. Each node in this cloud diagram represents a distinct data set published as Linked Data. The arcs indicate that RDF links exist between items in the two connected data sets. Heavier arcs roughly correspond to a greater number of links between two data sets, while bidirectional arcs indicate the outward links to the other exist in each data set.</p>
+
+    <p><a href="http://richard.cyganiak.de/2007/10/lod/imagemap.html"><img src="http://richard.cyganiak.de/2007/10/lod/lod-datasets_2010-09-22_1000px.png" alt="Linking Open Data cloud diagram, large version" title="Click to zoom"></a></p>
+
+    <p>Detailed information about all data sets that are currently part of the LOD Cloud is found in <a href="http://www.ckan.net/group/lodcloud">LOD Data Set Catalog</a> on CKAN.</p>
+
+
+    <h3 id="domains">1.2 Linked Data by Domain <small><a href="#domains">#</a></small></h3>
+
+    <p>Linked Data technologies are being using to share data covering a wide range of different topical domains. The table below gives an overview of the amount of triples as well as the amount of RDF links per domain. The number of RDF links refers to out-going links that are set from data sources within a domain to other data sources.</p>
+
+    <!-- Todo: Put table here: Number of triples and number of links by domain -->
+    <p>
+        <table>
+            <tr>
+                <th>Domain</th>
+                <th>Number of datasets</th>
+                <th>Triples</th>
+                <th>%</th>
+                <th>(Out-)Links</th>
+                <th>%</th>
+            </tr>
+                    <tr>
+                <td><strong>Media</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">26</a></td>
+                <td style="text-align: right;">2,454,298,811</td>
+                <td style="text-align: right;">9.08 %</td>
+                <td style="text-align: right;">50,376,504</td>
+                <td style="text-align: right;">12.74 %</td>
+            <tr>
+                        <tr>
+                <td><strong>Geographic</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">16</a></td>
+                <td style="text-align: right;">5,907,260,125</td>
+                <td style="text-align: right;">21.86 %</td>
+                <td style="text-align: right;">16,618,815</td>
+                <td style="text-align: right;">4.20 %</td>
+            <tr>
+                        <tr>
+                <td><strong>Government</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">25</a></td>
+                <td style="text-align: right;">11,620,223,569</td>
+                <td style="text-align: right;">43.00 %</td>
+                <td style="text-align: right;">17,658,869</td>
+                <td style="text-align: right;">4.46 %</td>
+            <tr>
+                        <tr>
+                <td><strong>Publications</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">67</a></td>
+                <td style="text-align: right;">2,282,435,732</td>
+                <td style="text-align: right;">8.45 %</td>
+                <td style="text-align: right;">77,951,898</td>
+                <td style="text-align: right;">19.71 %</td>
+            <tr>
+                        <tr>
+                <td><strong>Cross-domain</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">20</a></td>
+                <td style="text-align: right;">2,041,092,718</td>
+                <td style="text-align: right;">7.55 %</td>
+                <td style="text-align: right;">29,114,820</td>
+                <td style="text-align: right;">7.36 %</td>
+            <tr>
+                        <tr>
+                <td><strong>Life sciences</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">42</a></td>
+                <td style="text-align: right;">2,664,119,184</td>
+                <td style="text-align: right;">9.86 %</td>
+                <td style="text-align: right;">200,417,873</td>
+                <td style="text-align: right;">50.67 %</td>
+            <tr>
+                        <tr>
+                <td><strong>User-generated content</strong></td>
+                <td><a href="http://www.ckan.net/package/search?q=tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">7</a></td>
+                <td style="text-align: right;">57,463,756</td>
+                <td style="text-align: right;">0.21 %</td>
+                <td style="text-align: right;">3,402,228</td>
+                <td style="text-align: right;">0.86 %</td>
+            <tr>
+                        <tr style="text-weight: bold;">
+                <td></td>
+                <td></td>
+                <td style="text-align: right;">27,026,893,895</td>
+                <td style="text-align: right;"></td>
+                <td style="text-align: right;">395,541,007</td>
+                <td style="text-align: right;"></td>
+            </tr>
+        </table>
+
+        <p>The diagram below shows the distribution of triples by domain.</p>
+        <img src="http://chart.apis.google.com/chart?cht=p&chd=t:9.08,21.86,43.00,8.45,7.55,9.86,0.21&chs=400x150&chl=Media|Geographic|Government|Publications|Cross-domain|Life+sciences|User-generated+content&chco=B5C9FF|FFE882|9AFCD5|CFFC9F|BAF7EE|F7ADC8|FFD2AD" />
+
+        <p>The diagram below shows the distribution of links by domain.</p>
+        <img src="http://chart.apis.google.com/chart?cht=p&chd=t:12.74,4.20,4.46,19.71,7.36,50.67,0.86&chs=400x150&chl=Media|Geographic|Government|Publications|Cross-domain|Life+sciences|User-generated+content&chco=B5C9FF|FFE882|9AFCD5|CFFC9F|BAF7EE|F7ADC8|FFD2AD" />
+
+    <h3 id="producer">1.3 Dataset published by data producer or by third-party <small><a href="#producer">#</a></small></h3>
+
+    <p>Initially, the Linked Data best practices were adopted mainly by research projects and Web enthusiasts. These third-parties took existing data sets, converted them into RDF and served them on the Web. Alternatively, they implemented Linked Data wrappers around existing Web APIs. Today, Linked Data technologies are increasing adopted by the primary data producers themselves and are used by them to provide access to their data sets.</p>
+
+    <!-- Todo: Update date automatically -->
+
+    <p>As of October 2010, out of the 203 datasets in the LOD cloud <strong>67 (33.00 %)</strong>
+
+        are published by the data producers themselves, while <strong>136 (67.00 %)</strong>
+
+        are published by third-parties.</p>
+
+    <!-- Todo: List of datasets directly published by data producers (add links to CKAN) -->
+    <!-- List of datasets directly published by data producers -->
+
+    <ul>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Apublished-by-producer+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">List of datasets directly published by data producers</a>.</li>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Apublished-by-third-party+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">List of datasets published by third-parties</a>.</li>
+    </ul>
+
+    <h2 id="best-practices">2. Compliance with Best Practices for Data Provisioning <small><a href="#best-practices">#</a></small></h2>
+
+    <p>The promise of the Web of Linked Data is to enable applications to discover and integrate data from an global Web of interconnected data sources. In order to make it as easy as possible for applications to access and process Linked Data, data providers should publish data according to a set of best practices. These best practices recommend to make data accessible using the <a href="http://www.w3.org/2001/tag/doc/selfDescribingDocuments.html#algorithm">Web's standard access mechanism</a> (HTTP) and represent data using <a href="http://www.w3.org/2001/tag/doc/selfDescribingDocuments.html#standards">standardized Web formats</a> (i.e. RDF/XML, RDFa, XML with GRDDL). On the other hand, the best practices aim at making data as <a href="http://www.w3.org/2001/tag/doc/selfDescribingDocuments.html">self-descriptive</a> as possible. The best practices are either recommended directly by W3C or have emerged within the <a href="http://esw.w3.org/SweoIG/TaskForces/CommunityProjects/LinkingOpenData">LOD community</a>.</p>
+
+    <p>This section analyses to which extend data sources in the LOD cloud implement these best practices.</p>
+
+
+    <h3 id="dereferencable">2.1 Provide dereferencable URIs <small><a href="#dereferencable">#</a></small></h3>
+
+    <p>The basic idea of Linked Data is to make data accessible using the Web's standard retrieval algorithm. This means that every entity of interest, for instance a person, place, company or abstract concept, should be identified with its own http URI (<a href="http://www.w3.org/DesignIssues/LinkedData.html">Linked Data Principle 1</a>). On the other hand, these URIs should be made dereferencable into an RDF description of the entity (<a href="http://www.w3.org/DesignIssues/LinkedData.html">Linked Data Principle 2 and 3</a>). The W3C Interest Group Note <a href="http://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a> describes the different technical options for realizing such lookup operations (hash vs. slash URIs).</p>
+
+    <p><strong>100%</strong> of the data sources in the LOD cloud fulfill this best practice as it is a pre-condition for being included into the LOD cloud.</p>
+
+    <p>There are two validators available for checking whether URIs fulfill this best practice:
+      <ul>
+        <li><a href="http://swse.deri.org/RDFAlerts/">RDF:Alerts</a></li>
+        <li><a href="http://idi.fundacionctic.org/vapour">Vapour Linked Data Validator</a></li>
+      </ul>
+    </p>
+
+
+    <h3 id="links">2.2 Set RDF links pointing at other data sources <small><a href="#links">#</a></small></h3>
+
+    <p>The <a href="http://www.w3.org/DesignIssues/LinkedData.html">4th Linked Data principle</a> is to set RDF links pointing into other data sources. These RDF links connect data from different sources into a single global RDF graph and enable Linked Data browsers and crawlers to navigate between data sources.</p>
+
+    <p>The absolute number of RDF links in the LOD cloud is given in <a href="#dereferencable">Section 1.2</a>.</p>
+
+    <p>The table below categorizes the datasets in the LOD cloud by the absolute number of outgoing RDF links.</p>
+
+    <!-- Todo: Add table with datasets categorized by number of links (Skala: upto 500, upto 500, upto 10.000, upto 100.000, upto 1.000.000, more then 1 Mio)
+
+    Die Kennzahl Anzahl Links / GrÃ¶ÃŸe Datenset lassen wir weg, da nicht sehr aussagekräftig. -->
+    <table>
+        <tr>
+            <th>(Out-)Links</th>
+            <th>Number of datasets</th>
+        </tr>
+        <tr>
+            <td>up to 1,000</td>
+            <td>
+            89 (43.84 %)</td>
+        </tr>
+        <tr>
+            <td>10,000 to 10,000</td>
+            <td>
+            32 (15.76 %)</td>
+        </tr>
+        <tr>
+            <td>10,000 to 100,000</td>
+            <td>
+            36 (17.73 %)</td>
+        </tr>
+        <tr>
+            <td>100,000 to 1,000,000</td>
+            <td>
+            31 (15.27 %)</td>
+        </tr>
+        <tr>
+            <td>more than 1,000,000</td>
+            <td>
+            23 (11.33 %)</td>
+        </tr>
+    </table>
+
+        <p><img src="http://chart.apis.google.com/chart?cht=bhs&chs=400x125&chd=t:23,31,36,89&chxt=x,y&chxl=1:|up to 1,000 outgoing links|10,000 to 10,000 outgoing links|100,000 to 1,000,000 outgoing links|more than 1,000,000 outgoing links||:orientation => 'horizontal'"></p>
+
+    <p>The next table categorizes the LOD data sets by the number of other data sources that are target of outgoing RDF links.</p>
+
+    <!-- Todo: Add table with number of Linksets (Skala: 1, 2, 3, 4, 5, less then 10, more then 10) -->
+
+    <!-- Todo: Ideal wäre noch, wenn wir diese Anzahlen als Tags in CKAN annotieren könnten (Skript), damit wir hier Links auf die aktuellen Datasetlisten setzen könnten und so die Leute auszeichnen, die viele Linksets anbieten. -->
+
+        <table>
+        <tr>
+            <th>Number of linked datasets</th>
+            <th>Number of datasets</th>
+        </tr>
+                <tr>
+            <td>1</td>
+            <td>
+            62 (30.54 %)</td>
+        </tr>
+                <tr>
+            <td>2</td>
+            <td>
+            39 (19.21 %)</td>
+        </tr>
+                <tr>
+            <td>3</td>
+            <td>
+            24 (11.82 %)</td>
+        </tr>
+                <tr>
+            <td>4</td>
+            <td>
+            12 (5.91 %)</td>
+        </tr>
+                <tr>
+            <td>5</td>
+            <td>
+            3 (1.48 %)</td>
+        </tr>
+                <tr>
+            <td>6 to 10</td>
+            <td>
+            15 (7.39 %)</td>
+        </tr>
+        <tr>
+            <td>more than 10</td>
+            <td>
+            28 (13.79 %)</td>
+        </tr>
+    </table>
+
+        <p><img src="http://chart.apis.google.com/chart?cht=bhs&chs=400x205&chd=t:28,15,3,12,24,39,62&chxt=x,y&chxl=1:|1 linked data sets|2 linked data sets|3 linked data sets|4 linked data sets|5 linked data sets|6 - 10 linked data sets|> 10 linked data sets||"></p>
+
+    <h3 id="terms">2.3 Use terms from widely deployed vocabularies <small><a href="#terms">#</a></small></h3>
+
+    <p>In order to make it easier for applications to understand Linked Data, data providers should use terms from widely deployed vocabularies to represent data wherever possible.</p>
+
+    <p>Nearly all data sources in the LOD cloud use terms from the W3C base-vocabularies RDF, RDF Schema, and OWL. In addition <strong>110 (54.19 %)</strong> of the 203 data sources in the LOD cloud use terms from other non-proprietary vocabularies. When calculating this number, we consider a vocabulary to be proprietary if it is defined in the same top-level domain that is also used to serve the instance data.</p>
+
+    <p>The table below lists the most widely used vocabularies and provides links to the data sources that use a specific vocabulary.</p>
+
+    <!-- Todo: Make into a table and add links to CKAN format-X lists in addition to links to vocabulary defs. Cut-off: 2 data sources that use a vocab. -->
+
+    <table>
+        <tr>
+            <th>Vocabulary prefix</th>
+            <th>Vocabulary link</th>
+            <th>Number of usages in data sets</th>
+            <th>Data sets that use the vocabulary</th>
+        </tr>
+        
+                    <tr>
+                      <td><strong>dc</strong></td>
+                      <td><a href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a></td>
+                      <td>65 (32.02 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-dc+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use dc</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>foaf</strong></td>
+                      <td><a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a></td>
+                      <td>52 (25.62 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-foaf+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use foaf</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>dcterms</strong></td>
+                      <td><a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a></td>
+                      <td>38 (18.72 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-dcterms+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use dcterms</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>skos</strong></td>
+                      <td><a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a></td>
+                      <td>29 (14.29 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-skos+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use skos</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>akt</strong></td>
+                      <td><a href="http://www.aktors.org/ontology/portal#">http://www.aktors.org/ontology/portal#</a></td>
+                      <td>17 (8.37 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-akt+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use akt</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>geo</strong></td>
+                      <td><a href="http://www.w3.org/2003/01/geo/wgs84_pos#">http://www.w3.org/2003/01/geo/wgs84_pos#</a></td>
+                      <td>14 (6.90 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-geo+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use geo</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>mo</strong></td>
+                      <td><a href="http://purl.org/ontology/mo/">http://purl.org/ontology/mo/</a></td>
+                      <td>13 (6.40 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-mo+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use mo</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>bibo</strong></td>
+                      <td><a href="http://purl.org/ontology/bibo/">http://purl.org/ontology/bibo/</a></td>
+                      <td>8 (3.94 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-bibo+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use bibo</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>vcard</strong></td>
+                      <td><a href="http://www.w3.org/2006/vcard/ns#">http://www.w3.org/2006/vcard/ns#</a></td>
+                      <td>6 (2.96 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-vcard+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use vcard</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>frbr</strong></td>
+                      <td><a href="http://purl.org/vocab/frbr/core#">http://purl.org/vocab/frbr/core#</a></td>
+                      <td>5 (2.46 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-frbr+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use frbr</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>geonames</strong></td>
+                      <td><a href="http://www.geonames.org/ontology#">http://www.geonames.org/ontology#</a></td>
+                      <td>4 (1.97 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-geonames+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use geonames</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>sioc</strong></td>
+                      <td><a href="http://rdfs.org/sioc/ns#">http://rdfs.org/sioc/ns#</a></td>
+                      <td>4 (1.97 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-sioc+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use sioc</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>cc</strong></td>
+                      <td><a href="http://creativecommons.org/ns#">http://creativecommons.org/ns#</a></td>
+                      <td>4 (1.97 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-cc+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use cc</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>bio</strong></td>
+                      <td><a href="http://purl.org/vocab/bio/0.1/">http://purl.org/vocab/bio/0.1/</a></td>
+                      <td>4 (1.97 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-bio+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use bio</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>umbel</strong></td>
+                      <td><a href="http://umbel.org/umbel#">http://umbel.org/umbel#</a></td>
+                      <td>3 (1.48 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-umbel+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use umbel</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>xsd</strong></td>
+                      <td><a href="http://www.w3.org/2001/XMLSchema#">http://www.w3.org/2001/XMLSchema#</a></td>
+                      <td>3 (1.48 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-xsd+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use xsd</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>dbpedia</strong></td>
+                      <td><a href="http://dbpedia.org/resource/">http://dbpedia.org/resource/</a></td>
+                      <td>3 (1.48 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-dbpedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use dbpedia</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>event</strong></td>
+                      <td><a href="http://purl.org/NET/c4dm/event.owl#">http://purl.org/NET/c4dm/event.owl#</a></td>
+                      <td>3 (1.48 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-event+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use event</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>metalex</strong></td>
+                      <td></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-metalex+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use metalex</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>doap</strong></td>
+                      <td><a href="http://usefulinc.com/ns/doap#">http://usefulinc.com/ns/doap#</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-doap+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use doap</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>geospecies</strong></td>
+                      <td><a href="http://rdf.geospecies.org/ont/geospecies#">http://rdf.geospecies.org/ont/geospecies#</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-geospecies+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use geospecies</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>rev</strong></td>
+                      <td><a href="http://purl.org/stuff/rev#">http://purl.org/stuff/rev#</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-rev+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use rev</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>ore</strong></td>
+                      <td><a href="http://www.openarchives.org/ore/terms/">http://www.openarchives.org/ore/terms/</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-ore+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use ore</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>swrc</strong></td>
+                      <td><a href="http://swrc.ontoware.org/ontology#">http://swrc.ontoware.org/ontology#</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-swrc+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use swrc</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>gr</strong></td>
+                      <td><a href="http://purl.org/goodrelations/v1#">http://purl.org/goodrelations/v1#</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-gr+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use gr</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><strong>time</strong></td>
+                      <td><a href="http://www.w3.org/2006/time#">http://www.w3.org/2006/time#</a></td>
+                      <td>2 (0.99 %)</td>
+                      <td><a href="http://www.ckan.net/package/search?q=tags%3Aformat-time+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">Data sets that use time</a></td>
+                    </tr>
+                        </table>
+
+    
+        <p>The diagram below shows the distribution of most widely used vocabularies.</p>
+        <img src="http://chart.apis.google.com/chart?cht=p&chd=t:32.02,25.62,18.72,14.29,8.37,6.90,6.40,3.94,2.96,2.46,1.97,1.97,1.97,1.97,1.48,1.48,1.48,1.48,0.99,0.99,0.99,0.99,0.99,0.99,0.99,0.99,13.79&chs=450x250&chl=dc|foaf|dcterms|skos|akt|geo|mo|bibo|vcard|frbr|geonames|sioc|cc|bio|umbel|xsd|dbpedia|event|metalex|doap|geospecies|rev|ore|swrc|gr|time|other&chco=B5C9FF|FFE882|9AFCD5|CFFC9F|BAF7EE|F7ADC8|FFD2AD&chp=-0.55" />
+
+
+    <h3 id="dereferencable-vocab">2.4 Make proprietary vocabulary terms dereferencable <small><a href="#dereferencable-vocab">#</a></small></h3>
+
+    <p>Widely deployed vocabularies often do not provide all terms that are needed to publish the complete content of a data set on the Web. Thus, data providers often define proprietary terms that are used in addition to terms from widely deployed vocabularies.</p>
+
+    <p>Currently:
+      <ul>
+                <li><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>120 (59.11 %)</strong> out of the 203 data sources <strong>use</strong> proprietary vocabulary terms.</a></li>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>77 (37.93 %)</strong> out of the 203 data sources <strong>do not use</strong> proprietary vocabulary terms.</a></li>
+      </ul>
+    </p>
+
+    <p>In order to enable applications to automatically retrieve the definition of vocabulary terms from the Web, URIs identifying vocabulary terms should be made dereferencable. Guidelines for doing this are given in the W3C Note <a href="http://www.w3.org/TR/2008/NOTE-swbp-vocab-pub-20080828/">Best Practice Recipes for Publishing RDF Vocabularies.</a></p>
+
+    <p>Currently:
+      <ul>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>108 (90.00 %)</strong> out of these 120 data sources <strong>make</strong> proprietary term URIs deferencable.</a></li>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>12 (10.00 %)</strong> out of these 120 data sources <strong>do not make</strong> proprietary term URIs deferencable.</a></li>
+      </ul>
+    </p>
+
+    <p>Split by topical domain, the numbers look as follows:</p>
+
+    <table>
+        <tr>
+            <th>Domain</th>
+            <th>Proprietary vocabulary terms</th>
+            <th>Dereferancable proprietary term URIs</th>
+            <th>Not dereferancable proprietary term URIs</th>
+            <th>No proprietary vocabulary terms</th>
+        </tr>
+                <tr>
+            <td><strong>Media</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">14</a>/26 (53.85 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">11</a>/26 (42.31 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">3</a>/26 (11.54 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">12</a>/26 (46.15 %)</td>
+        </tr>
+                <tr>
+            <td><strong>Geographic</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">13</a>/16 (81.25 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">11</a>/16 (68.75 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/16 (12.50 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/16 (12.50 %)</td>
+        </tr>
+                <tr>
+            <td><strong>Government</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">18</a>/25 (72.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">16</a>/25 (64.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/25 (8.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/25 (8.00 %)</td>
+        </tr>
+                <tr>
+            <td><strong>Publications</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">48</a>/67 (71.64 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">46</a>/67 (68.66 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/67 (2.99 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">19</a>/67 (28.36 %)</td>
+        </tr>
+                <tr>
+            <td><strong>Cross-domain</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">15</a>/20 (75.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">13</a>/20 (65.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/20 (10.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">5</a>/20 (25.00 %)</td>
+        </tr>
+                <tr>
+            <td><strong>Life sciences</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">10</a>/42 (23.81 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">9</a>/42 (21.43 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">1</a>/42 (2.38 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">32</a>/42 (76.19 %)</td>
+        </tr>
+                <tr>
+            <td><strong>User-generated content</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=%28tags%3Aderef-vocab+OR+tags%3Ano-deref-vocab%29+AND+tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/7 (28.57 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aderef-vocab+AND+tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/7 (28.57 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-deref-vocab+AND+tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">0</a>/7 (0.00 %)</td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Ano-proprietary-vocab+AND+tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">5</a>/7 (71.43 %)</td>
+        </tr>
+            </table>
+
+
+    <h3 id="mappings">2.5 Map proprietary vocabulary terms to other vocabularies <small><a href="#mappings">#</a></small></h3>
+
+    <p>Proprietary vocabulary terms should be related to corresponding terms within other (widely used) vocabularies in order to enable applications to understand as much data as possible and to translate data into their target schemata (see <a href="http://www.w3.org/2001/tag/doc/selfDescribingDocuments.html#RDFSection">RDF and the Self-Describing Semantic Web</a>). The W3C recommendations define the following terms for representing such correspondences (mappings): <a href="http://www.w3.org/TR/2004/REC-owl-features-20040210/#equivalentClass">owl:equivalentClass</a>, <a href="http://www.w3.org/TR/2004/REC-owl-features-20040210/#equivalentProperty">owl:equivalentProperty</a>, or if a looser mapping is desired: <a href="http://www.w3.org/TR/rdf-schema/#ch_subclassof">rdfs:subClassOf</a>, <a href="http://www.w3.org/TR/rdf-schema/#ch_subclassof">rdfs:subPropertyOf</a>, and <a href="http://www.w3.org/TR/skos-reference/#mapping">skos:broadMatch</a>, <a href="http://www.w3.org/TR/skos-reference/#mapping">skos:narrowMatch</a>.</p>
+
+    <p>Currently <strong>9 (7.50 %)</strong>
+
+        out of the
+
+        120
+        data sources that use proprietary terms provide mappings to other vocabularies for their terms.
+
+        <ul>
+            <li><a href="http://www.ckan.net/package/search?q=tags%3Avocab-mappings+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">List of data source that <strong>provide</strong> mappings for proprietary terms</a>.</li>
+            <li><a href="http://www.ckan.net/package/search?q=tags%3Ano-vocab-mappings+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">List of data source that <strong>do not provide</strong> mappings for proprietary terms</a>.</li>
+        </ul>
+    </p>
+
+    <h3 id="provenance">2.6 Provide provenance metadata <small><a href="#provenance">#</a></small></h3>
+
+    <p>In order to enable applications to be sure about the origin of data as well as to enable them to assess the quality of data, data source should publish provenance meta data together with the primary data. A common means for providing provenance information is to represent it as document level metadata as described in the <a href="http://www4.wiwiss.fu-berlin.de/bizer/pub/LinkedDataTutorial/#deref">How to publish Linked Data</a> tutorial. A widely deployed vocabulary for representing provenance information is <a href="http://dublincore.org/documents/usageguide/">Dublin Core</a> (dc:creator, dc:publisher, dc:date). Alternative vocabularies which provide for representing more details about the data creation process include the <a href="http://openprovenance.org/">Open Provenance Model</a> as well as the vocabularies examined by the <a href="http://www.w3.org/2005/Incubator/prov/wiki/Provenance_Vocabulary_Mappings">W3C Provenance Incubator Group</a>.</p>
+
+    <p>Currently:
+      <ul>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>50 (25.77 %)</strong> out of the 203 data sources <strong>provide</strong> provenance information.</a></li>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Ano-provenance-metadata+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>144 (74.23 %)</strong> out of the 203 data sources <strong>do not provide</strong> provenance information.</a></li>
+      </ul>
+    </p>
+
+    <p>Split by topical domain, the figures look as follows:</p>
+    <table>
+        <tr>
+            <th>Domain</th>
+            <th>Provenance information</th>
+        </tr>
+            <tr>
+            <td><strong>Media</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">3</a>/26 (11.54 %)</td>
+                <tr>
+            <td><strong>Geographic</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">4</a>/16 (25.00 %)</td>
+                <tr>
+            <td><strong>Government</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/25 (8.00 %)</td>
+                <tr>
+            <td><strong>Publications</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">36</a>/67 (53.73 %)</td>
+                <tr>
+            <td><strong>Cross-domain</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">3</a>/20 (15.00 %)</td>
+                <tr>
+            <td><strong>Life sciences</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">1</a>/42 (2.38 %)</td>
+                <tr>
+            <td><strong>User-generated content</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Aprovenance-metadata+AND+tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">1</a>/7 (14.29 %)</td>
+            </table>
+
+
+    <h3 id="license">2.7 Provide licensing metadata <small><a href="#license">#</a></small></h3>
+
+    <p>Web data should be self-descriptive concerning any restrictions that apply to its usage. A common way to express such restrictions is to attach a <a href="http://esw.w3.org/TaskForces/CommunityProjects/LinkingOpenData/DataLicensing">data license</a> to published data. Doing so is essential to enable applications to use Web data on a secure legal basis. A common means to attach licenses to Linked Data is to use dc:rights links pointing at the license as document-level metadata. An example of this is given in the <a href="http://www4.wiwiss.fu-berlin.de/bizer/pub/LinkedDataTutorial/#deref">How to publish Linked Data</a> tutorial.
+
+    <p>Currently:
+      <ul>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>18 (9.23 %)</strong> out of the 203 data sources <strong>provide</strong> licensing information.</a></li>
+        <li><a href="http://www.ckan.net/package/search?q=tags%3Ano-license-metadata+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected"><strong>177 (90.77 %)</strong> out of the 203 data sources <strong>do not provide</strong> licensing information.</a></li>
+      </ul>
+    </p>
+
+    <p>Split by topical domain, the figures look as follows:</p>
+    <table>
+        <tr>
+            <th>Domain</th>
+            <th>Licensing information</th>
+        </tr>
+            <tr>
+            <td><strong>Media</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Amedia+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">4</a>/26 (15.38 %)</td>
+                <tr>
+            <td><strong>Geographic</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Ageographic+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">3</a>/16 (18.75 %)</td>
+                <tr>
+            <td><strong>Government</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Agovernment+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/25 (8.00 %)</td>
+                <tr>
+            <td><strong>Publications</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Apublications+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">6</a>/67 (8.96 %)</td>
+                <tr>
+            <td><strong>Cross-domain</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Acrossdomain+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">2</a>/20 (10.00 %)</td>
+                <tr>
+            <td><strong>Life sciences</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Alifesciences+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">1</a>/42 (2.38 %)</td>
+                <tr>
+            <td><strong>User-generated content</strong></td>
+            <td><a href="http://www.ckan.net/package/search?q=tags%3Alicense-metadata+AND+tags%3Ausergeneratedcontent+AND+groups%3Alodcloud+AND+-tags%3Alodcloud.needsfixing+-tags%3Alodcloud.nolinks+AND+-tags%3Alodcloud.unconnected">0</a>/7 (0.00 %)</td>
+            </table>
+
+    <h3 id="data-set-level-metadata">2.8 Provide dataset-level Metadata <small><a href="#data-set-level-metadata">#</a></small></h3>
+
+    <p>In addition to making instance data self-descriptive, it is also desirable that data publishers provide metadata describing characteristic of complete data sets, for instance the topic of a dataset and more detailed statistics. A vocabulary for representing such metadata is the <a href="http://vocab.deri.ie/void/guide">voiD vocabulary</a>. A second means for representing dataset-level metadata are <a href="http://sw.deri.org/2007/07/sitemapextension/">Semantic Sitemaps</a>.</p>
+
+    <p>Currently,
+      <ul>
+        <li><strong>62 (30.54 %)</strong> out of the 203 data sources <strong>provide</strong> a voiD description.</li>
+        <li><strong>38 (18.72 %)</strong> out of the 203 data sources <strong>provide</strong> a Semantic Sitemap.</li>
+        <li><strong>67 (33.00 %)</strong> out of the 203 data sources <strong>provide</strong> either a voiD description or Semantic Sitemap.</li>
+        <li><strong>136 (67.00 %)</strong> out of the 203 data sources <strong>do not provide</strong> either a voiD description or Semantic Sitemap.</li>
+      </ul>
+    </p>
+
+    <p>Split by topical domain, the figures look as follows:</p>
+    <table>
+        <tr>
+            <th>Domain</th>
+            <th>voiD</th>
+            <th>Semantic Sitemap</th>
+            <th>voiD or Semantic Sitemap</th>
+        </tr>
+                <tr>
+            <td><strong>Media</strong></td>
+            <td>5/26 (19.23 %)</td>
+            <td>0/26 (0.00 %)</td>
+            <td>5/26 (19.23 %)</td>
+        </tr>
+                    <tr>
+            <td><strong>Geographic</strong></td>
+            <td>4/16 (25.00 %)</td>
+            <td>2/16 (12.50 %)</td>
+            <td>5/16 (31.25 %)</td>
+        </tr>
+                    <tr>
+            <td><strong>Government</strong></td>
+            <td>12/25 (48.00 %)</td>
+            <td>0/25 (0.00 %)</td>
+            <td>12/25 (48.00 %)</td>
+        </tr>
+                    <tr>
+            <td><strong>Publications</strong></td>
+            <td>36/67 (53.73 %)</td>
+            <td>30/67 (44.78 %)</td>
+            <td>36/67 (53.73 %)</td>
+        </tr>
+                    <tr>
+            <td><strong>Cross-domain</strong></td>
+            <td>3/20 (15.00 %)</td>
+            <td>1/20 (5.00 %)</td>
+            <td>3/20 (15.00 %)</td>
+        </tr>
+                    <tr>
+            <td><strong>Life sciences</strong></td>
+            <td>1/42 (2.38 %)</td>
+            <td>5/42 (11.90 %)</td>
+            <td>5/42 (11.90 %)</td>
+        </tr>
+                    <tr>
+            <td><strong>User-generated content</strong></td>
+            <td>1/7 (14.29 %)</td>
+            <td>0/7 (0.00 %)</td>
+            <td>1/7 (14.29 %)</td>
+        </tr>
+                </table>
+
+
+    <h3 id="access">2.9 Refer to additional access methods <small><a href="#access">#</a></small></h3>
+
+    <p>The primary way to publish Linked Data on the Web is to make the URIs that identity data items dereferencable into RDF descriptions. In addition, various LOD data providers have chosen to provide two alternative means of access to their data:
+      <ol>
+        <li>SPARQL endpoints which allow expressive queries to be asked against the datasets.</li>
+        <li>They provide RDF dumps of the complete dataset for download from a separate URL.</li>
+      </ol>
+    </p>
+
+    <p>Altogether <strong>133 (65.52 %)</strong> out of the 203 data sources provide a SPARQL endpoint. <strong>71 (34.98 %)</strong> out of the 203 data sources provide RDF dumps.</p>
+
+    <p>The <a href="http://vocab.deri.ie/void/guide">voiD vocabulary</a> provides terms for pointing applications from the description of a single entity to these alternative means of access. For this voiD recommends to use a link of the type dcterms:isPartOf to point from the entity description to a void description of the complete dataset. This dataset description in turn may contain void:sparqlEndpoint and void:dataDump links pointing at SPARQL endpoint and the download URI of RDF dataset dumps.</p>
+
+    <p>Currently,
+        <ul>
+            <!-- Todo: get numbers from script -->
+            <li><strong>43 (64.18 %)</strong> out of the 67 voiD descriptions and Semantic Sitemaps point to the data source's SPARQL endpoint.</li>
+            <li><strong>38 (56.72 %)</strong> out of the 67 voiD descriptions and Semantic Sitemaps point to the data source's RDF dump(s).</li>
+        </ul>
+    </p>
+
+    <h2>Revision history</h2>
+
+      <ul>
+        <li>02/16/2011: Version 0.2 (Christian Bizer, Anja Jentzsch)</li>
+        <li>10/19/2010: <a href="2010-10_index.html">Initial preliminary version</a> of this document for community feedback (Christian Bizer, Anja Jentzsch)</li>
+      </ul>
+
+  </body>
+</html>

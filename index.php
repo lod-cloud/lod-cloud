@@ -34,40 +34,43 @@
 
 <?php
 $versions = array(
-    '2007-05-01' => array('count' => 12),
-    '2007-10-08' => array('count' => 25),
-    '2007-11-07' => array('count' => 28),
-    '2007-11-10' => array('count' => 28),
-    '2008-02-28' => array('count' => 32),
-    '2008-03-31' => array('count' => 34),
-    '2008-09-18' => array('count' => 45),
-    '2009-03-05' => array('count' => 89),
-    '2009-03-27' => array('count' => 93),
-    '2009-07-14' => array('count' => 95),
-    '2010-09-22' => array('count' => 203),
     '2011-09-19' => array('count' => 295),
+    '2010-09-22' => array('count' => 203),
+    '2009-07-14' => array('count' => 95),
+    '2009-03-27' => array('count' => 93),
+    '2009-03-05' => array('count' => 89),
+    '2008-09-18' => array('count' => 45),
+    '2008-03-31' => array('count' => 34),
+    '2008-02-28' => array('count' => 32),
+    '2007-11-10' => array('count' => 28),
+    '2007-11-07' => array('count' => 28),
+    '2007-10-08' => array('count' => 25),
+    '2007-05-01' => array('count' => 12),
 );
 
-$dir = dir('.');
-$d = '0000-00-00';
-while (false !== ($entry = $dir->read())) {
-    if (!preg_match('/lod-datasets_(\d\d\d\d-\d\d-\d\d)(_colored)?\.(pdf|png|svg)/', $entry, $match)) {
-        continue;
+$latest = '0000-00-00';
+foreach ($versions as $date => $dummy) {
+    if ($date > $latest) {
+        $latest = $date;
     }
-    if ($match[1] > $d) {
-        $d = $match[1];
+    $dir = dir('versions/' . $date);
+    while (false !== ($entry = $dir->read())) {
+        if (!preg_match('/lod-cloud(_colored)?\.(pdf|png|svg)/', $entry, $match)) {
+            continue;
+        }
+        $colors = $match[1] ? 'color' : 'white';
+        $filetype = $match[2];
+        $versions[$date][$colors][$filetype] = true;
     }
-    $colors = $match[2] ? 'color' : 'white';
-    $versions[$match[1]][$colors][$match[3]] = true;
+    $dir->close();
 }
-$dir->close();
-krsort($versions);
+$d = $latest;
 
 ?>
 
     <p>Last updated: <span property="dc:modified" datatype="xsd:date"><?php echo $d; ?></span></p>
 
-    <p><a href="lod-datasets_<?php echo $d; ?>.html"><img src="lod-datasets_<?php echo $d; ?>_1000px.png" alt="Linking Open Data cloud diagram, large version" title="Click to zoom" /></a></p>
+    <p><a href="versions/<?php echo $d; ?>/lod-cloud.html"><img src="versions/<?php echo $d; ?>/lod-cloud_1000px.png" alt="Linking Open Data cloud diagram, large version" title="Click to zoom" /></a></p>
 
 
     <h2 id="license">Can I use this diagram in my slides, paper, book? <small><a href="#license">#</a></small></h2>
@@ -80,21 +83,21 @@ krsort($versions);
       attribution. If you create derivative works (such as modified or extended versions of the diagram), then
       you must also license them as CC-BY-SA.</p>
 
-    <div style="float:right;margin-right:2em"><a href="lod-datasets_<?php echo $d; ?>_colored.html"><img src="lod-datasets_<?php echo $d; ?>_colored_300px.png" alt="Linking Open Data cloud diagram, large version, colored by theme" title="Click to zoom" /></a></div>
+    <div style="float:right;margin-right:2em"><a href="versions/<?php echo $d; ?>/lod-cloud_colored.html"><img src="versions/<?php echo $d; ?>/lod-cloud_colored_300px.png" alt="Linking Open Data cloud diagram, large version, colored by theme" title="Click to zoom" /></a></div>
 
     <p>Please give attribution along the following lines:</p>
 
     <blockquote><p>“Linking Open Data cloud diagram, by Richard Cyganiak and Anja Jentzsch. http://lod-cloud.net/”</p></blockquote>
 
     <p>The diagram is available
-      in <a href="lod-datasets_<?php echo $d; ?>.png">PNG</a>,
-      in <a href="lod-datasets_<?php echo $d; ?>.pdf">PDF</a> and
-      <a href="lod-datasets_<?php echo $d; ?>.svg">SVG</a> versions.</p>
+      in <a href="versions/<?php echo $d; ?>/lod-cloud.png">PNG</a>,
+      in <a href="versions/<?php echo $d; ?>/lod-cloud.pdf">PDF</a> and
+      <a href="versions/<?php echo $d; ?>/lod-cloud.svg">SVG</a> versions.</p>
 
     <p>There is also a colored-by-theme version
-      in <a href="lod-datasets_<?php echo $d; ?>_colored.png">PNG</a>,
-      in <a href="lod-datasets_<?php echo $d; ?>_colored.pdf">PDF</a> and
-      <a href="lod-datasets_<?php echo $d; ?>_colored.svg">SVG</a>.</p>
+      in <a href="versions/<?php echo $d; ?>/lod-cloud_colored.png">PNG</a>,
+      in <a href="versions/<?php echo $d; ?>/lod-cloud_colored.pdf">PDF</a> and
+      <a href="versions/<?php echo $d; ?>/lod-cloud_colored.svg">SVG</a>.</p>
 
 
     <h2 id="how-to-join">How can I get my dataset into the diagram? <small><a href="#how-to-join">#</a></small></h2>
@@ -231,25 +234,25 @@ krsort($versions);
       </tr>
       <tr typeof="dctype:Image" about="#cloud" property="dc:title" content="LOD cloud diagram">
         <th property="dc:modified" datatype="xsd:date" content="<?php echo $d; ?>">Latest</th>
-        <td><?php if ($versions[$d]['white']['png']) { ?><a rel="dc:hasFormat" href="lod-datasets_<?php echo $d; ?>.png">png</a><?php } ?></td>
-        <td><?php if ($versions[$d]['white']['pdf']) { ?><a rel="dc:hasFormat" href="lod-datasets_<?php echo $d; ?>.pdf">pdf</a><?php } ?></td>
-        <td><?php if ($versions[$d]['white']['svg']) { ?><a rel="dc:hasFormat" href="lod-datasets_<?php echo $d; ?>.svg">svg</a><?php } ?></td>
+        <td><?php if ($versions[$d]['white']['png']) { ?><a rel="dc:hasFormat" href="versions/<?php echo $d; ?>/lod-cloud.png">png</a><?php } ?></td>
+        <td><?php if ($versions[$d]['white']['pdf']) { ?><a rel="dc:hasFormat" href="versions/<?php echo $d; ?>/lod-cloud.pdf">pdf</a><?php } ?></td>
+        <td><?php if ($versions[$d]['white']['svg']) { ?><a rel="dc:hasFormat" href="versions/<?php echo $d; ?>/lod-cloud.svg">svg</a><?php } ?></td>
         <!-- TODO RDFa markup for the colored versions -->
-        <td><?php if ($versions[$d]['color']['png']) { ?><a href="lod-datasets_<?php echo $d; ?>_colored.png">png</a><?php } ?></td>
-        <td><?php if ($versions[$d]['color']['pdf']) { ?><a href="lod-datasets_<?php echo $d; ?>_colored.pdf">pdf</a><?php } ?></td>
-        <td><?php if ($versions[$d]['color']['svg']) { ?><a href="lod-datasets_<?php echo $d; ?>_colored.svg">svg</a><?php } ?></td>
+        <td><?php if ($versions[$d]['color']['png']) { ?><a href="versions/<?php echo $d; ?>/lod-cloud_colored.png">png</a><?php } ?></td>
+        <td><?php if ($versions[$d]['color']['pdf']) { ?><a href="versions/<?php echo $d; ?>/lod-cloud_colored.pdf">pdf</a><?php } ?></td>
+        <td><?php if ($versions[$d]['color']['svg']) { ?><a href="versions/<?php echo $d; ?>/lod-cloud_colored.svg">svg</a><?php } ?></td>
         <td class="dataset-count"><?php if ($versions[$d]['count']) echo $versions[$d]['count']; else echo '?'; ?></td>
       </tr>
 <?php foreach ($versions as $date => $version) { ?>
       <tr typeof="dctype:Image" about="#cloud_<?php echo $date; ?>" property="dc:title" content="LOD cloud diagram, version <?php echo $date; ?>">
         <th property="dc:date" datatype="xsd:date"><?php echo $date; ?></th>
-        <td><?php if ($version['white']['png']) { ?><a rel="dc:hasFormat" href="lod-datasets_<?php echo $date; ?>.png"><span property="dc:format" content="image/png">png</span></a><?php } ?></td>
-        <td><?php if ($version['white']['pdf']) { ?><a rel="dc:hasFormat" href="lod-datasets_<?php echo $date; ?>.pdf"><span property="dc:format" content="application/pdf">pdf</span></a><?php } ?></td>
-        <td><?php if ($version['white']['svg']) { ?><a rel="dc:hasFormat" href="lod-datasets_<?php echo $date; ?>.svg"><span property="dc:format" content="image/svg+xml">svg</span></a><?php } ?></td>
+        <td><?php if ($version['white']['png']) { ?><a rel="dc:hasFormat" href="versions/<?php echo $date; ?>/lod-cloud.png"><span property="dc:format" content="image/png">png</span></a><?php } ?></td>
+        <td><?php if ($version['white']['pdf']) { ?><a rel="dc:hasFormat" href="versions/<?php echo $date; ?>/lod-cloud.pdf"><span property="dc:format" content="application/pdf">pdf</span></a><?php } ?></td>
+        <td><?php if ($version['white']['svg']) { ?><a rel="dc:hasFormat" href="versions/<?php echo $date; ?>/lod-cloud.svg"><span property="dc:format" content="image/svg+xml">svg</span></a><?php } ?></td>
         <!-- TODO RDFa markup for the colored versions -->
-        <td><?php if ($version['color']['png']) { ?><a href="lod-datasets_<?php echo $date; ?>_colored.png"><span>png</span></a><?php } ?></td>
-        <td><?php if ($version['color']['pdf']) { ?><a href="lod-datasets_<?php echo $date; ?>_colored.pdf"><span>pdf</span></a><?php } ?></td>
-        <td><?php if ($version['color']['svg']) { ?><a href="lod-datasets_<?php echo $date; ?>_colored.svg"><span>svg</span></a><?php } ?></td>
+        <td><?php if ($version['color']['png']) { ?><a href="versions/<?php echo $date; ?>/lod-cloud_colored.png"><span>png</span></a><?php } ?></td>
+        <td><?php if ($version['color']['pdf']) { ?><a href="versions/<?php echo $date; ?>/lod-cloud_colored.pdf"><span>pdf</span></a><?php } ?></td>
+        <td><?php if ($version['color']['svg']) { ?><a href="versions/<?php echo $date; ?>/lod-cloud_colored.svg"><span>svg</span></a><?php } ?></td>
         <td class="dataset-count"><?php if ($version['count']) echo $version['count']; else echo '?'; ?></td>
       </tr>
 <?php } ?>
