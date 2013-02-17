@@ -196,7 +196,13 @@ $d = $latest;
     <p>There are some code modules (Python, PHP, Drupal, Perl etc.) that provide convenient wrappers around much of the CKAN API.
       For full details of these, please consult <a href="http://docs.ckan.org/en/latest/api.html">the API docs</a>.</p>
 
-    <p>In the future we plan to make the data available directly as RDF, using the <a href="http://www.w3.org/TR/void/">VoID vocabulary</a>.</p>
+    <p>A <strong><a href="data/void.ttl">VoID dump</a></strong> in Turtle
+      format is availble. Note that, at the moment, this is not automatically
+      synchronized with the Data Hub, and thus might be somewhat outdated.
+      If you need guaranteed up-to-date data, you can run
+      <a href="https://github.com/lod-cloud/datahub2void">the code that
+      generates the data</a> yourself. For more information on VoID, see
+      the <a href="http://www.w3.org/TR/void/">VoID Guide</a>.</p>
 
 
     <h2 id="workflow">How is the diagram generated? <small><a href="#workflow">#</a></small></h2>
