@@ -14,7 +14,7 @@
   </head>
   <body>
     <div style="float:right">
-      <a href="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/"><img src="resources/logo-fub.png" alt="Freie Universität Berlin" style="position:relative;top:3px" /></a>
+      <a href="https://www.hpi.uni-potsdam.de/willkommen.html?L=1"><img src="http://validator.lod-cloud.net/images/hpi-logo.jpg" alt="Hasso-Plattner-Institut" style="position:relative;top:3px;height:40px;" /></a>
       <a href="http://www.deri.ie/"><img src="resources/logo-deri.png" alt="DERI" /></a>
     </div>
 
